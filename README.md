@@ -1,5 +1,5 @@
 # Gmail_Listener_and_Responder
-As a Part of My Automated Account Ledger Downloading, Processing, and Delivery System for Dental Health Care Providers 
+As a Part of My Automated Account Ledger Downloading, Processing, and Delivery System for Dental Health Care Providers who use OpenDental 
 
 This tool is for use on Windows 10 systems which use Open Dental as their choice of practice management software
 
