@@ -1,0 +1,36 @@
+Attribute VB_Name = "Module4"
+
+' Saves macro'd xl doc as csv for python import and analysis
+' Copyright Steven Steinbeck
+
+Sub WriteTextFile()
+    Dim FilePath As String
+    Dim CellData As String
+    Dim LastCol As Long
+    Dim LastRow As Long
+    Dim Name_csv As String
+    
+    Name_cs = ActiveWorkbook.Name & ".csv"
+    Name_csv = Replace(Name_cs, ".xlsx", "_csv")
+    LastCol = ActiveSheet.UsedRange.SpecialCells(xlCellTypeLastCell).Column
+    LastRow = ActiveSheet.UsedRange.SpecialCells(xlCellTypeLastCell).Row
+    
+    CellData = ""
+    FilePath = Application.ActiveWorkbook.Path & "\" & Name_csv
+    
+    Open FilePath For Output As #2
+
+    For i = 1 To LastRow
+        For j = 1 To LastCol
+            If j = LastCol Then
+                CellData = CellData + Trim(ActiveCell(i, j).Value)
+            Else
+                CellData = CellData + Trim(ActiveCell(i, j).Value) + ","
+            End If
+        Next j
+        Write #2, CellData
+        CellData = ""
+    Next i
+    Close i2
+    MsgBox ("Done")
+End Sub

@@ -1,0 +1,16 @@
+Attribute VB_Name = "Module2"
+' Copyright Steven Steinbeck
+
+Sub DeleteFinance()
+Attribute DeleteFinance.VB_Description = "Delete Old Finance Charge Rows"
+Attribute DeleteFinance.VB_ProcData.VB_Invoke_Func = "q\n14"
+With ActiveSheet
+    .AutoFilterMode = False
+    With Range("f1", Range("f" & Rows.Count).End(xlUp))
+        .AutoFilter 1, "*Finance Charge*"
+        On Error Resume Next
+        .Offset(1).SpecialCells(12).EntireRow.Delete
+    End With
+    .AutoFilterMode = False
+End With
+End Sub

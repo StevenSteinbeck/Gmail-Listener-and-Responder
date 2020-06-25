@@ -1,0 +1,121 @@
+Attribute VB_Name = "Module1"
+Sub MakePrettyandFillFormulas()
+Attribute MakePrettyandFillFormulas.VB_Description = "Format Doc and Fill Formulas"
+Attribute MakePrettyandFillFormulas.VB_ProcData.VB_Invoke_Func = "w\n14"
+'
+' MakePrettyandFillFormulas Macro
+' Copyright Steven Steinbeck
+' Keyboard Shortcut: Ctrl+q
+'
+    Range("A1:M1").Select
+    Selection.Font.Bold = True
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    Selection.Borders(xlEdgeLeft).LineStyle = xlNone
+    Selection.Borders(xlEdgeTop).LineStyle = xlNone
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Selection.Borders(xlEdgeRight).LineStyle = xlNone
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
+    ActiveWindow.SmallScroll Down:=-6
+    Range("J1").Select
+    ActiveCell.FormulaR1C1 = "Pri"
+    Range("A1").Select
+    ActiveCell.FormulaR1C1 = "Date"
+    Range("B1").Select
+    ActiveCell.FormulaR1C1 = "Name"
+    Columns("C:C").Select
+    Selection.Delete Shift:=xlToLeft
+    Range("C1").Select
+    ActiveCell.FormulaR1C1 = "CDT"
+    Range("D1").Select
+    ActiveCell.FormulaR1C1 = "T#"
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "Description"
+    Range("J1").Select
+    ActiveCell.FormulaR1C1 = "Was"
+    Range("K1").Select
+    ActiveCell.FormulaR1C1 = "Notes"
+    Range("L1").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    Selection.Borders(xlEdgeLeft).LineStyle = xlNone
+    Selection.Borders(xlEdgeTop).LineStyle = xlNone
+    Selection.Borders(xlEdgeBottom).LineStyle = xlNone
+    Selection.Borders(xlEdgeRight).LineStyle = xlNone
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    With Selection
+        .HorizontalAlignment = xlCenter
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    ActiveCell.FormulaR1C1 = "Adj Amt"
+    Range("L2").Select
+    Columns("A:A").ColumnWidth = 10.71
+    Columns("B:B").ColumnWidth = 23.29
+    Columns("B:B").ColumnWidth = 20.29
+    Columns("C:C").ColumnWidth = 5.57
+    Columns("D:D").ColumnWidth = 3.86
+    Columns("E:E").ColumnWidth = 54.43
+    Columns("E:E").ColumnWidth = 63.57
+    Columns("F:K").Select
+    Selection.Style = "Comma"
+    Cells.Select
+    Range("F1").Activate
+    ActiveSheet.Sort.SortFields.Clear
+    ActiveSheet.Sort.SortFields.Add2 Key:= _
+        Range("A2:A75"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveSheet.Sort
+        .SetRange Range("A1:L75")
+        .Header = xlYes
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("H2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=RC[-2]-RC[-1]"
+    Range("H3").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R[-1]C+RC[-2]-RC[-1]"
+    Range("I2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=RC[-1]"
+    Range("I3").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=R[-1]C+RC[-3]-RC[-2]"
+    Range("H3:I3").Select
+    Selection.AutoFill Destination:=Range("H3:I200"), Type:=xlFillDefault
+    Range("H3:I75").Select
+    Columns("I:I").ColumnWidth = 10.14
+    Columns("H:H").ColumnWidth = 10
+End Sub
