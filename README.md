@@ -21,5 +21,5 @@ Unless you run OD, much of this will not function correctly. Though the email sc
 3. Open cmd or terminal and cd to your downloads folder
         python EmailMonitorTool.py
 
-
+![alt text](https://i.ibb.co/fkQgXCH/Screen-Shot-2020-06-25-at-12-14-32-PM.png)
 
