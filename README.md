@@ -1,2 +1,2 @@
 # Gmail-Listener-and-Responder
-Automated Account Ledger Downloading, Processing, and Delivery System for Dental Health Care Providers 
+As a Part of My Automated Account Ledger Downloading, Processing, and Delivery System for Dental Health Care Providers 
