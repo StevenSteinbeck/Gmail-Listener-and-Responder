@@ -25,5 +25,5 @@ Unless you run OD, much of this will not function correctly. Though the email sc
  # Example Output 
  (LOGIN FAILED!!! is generated every instance of refresh when there are no emails in the specified gmail inbox folder. Actual login fail will exit program)
  
-![alt text](https://i.ibb.co/fkQgXCH/Screen-Shot-2020-06-25-at-12-14-32-PM.png)
+![alt text](https://linkpicture.com/q/Screen-Shot-2020-06-25-at-12.14.32-PM.png)
 
